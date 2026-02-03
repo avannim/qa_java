@@ -36,7 +36,7 @@ public class ParametrizedTest {
     @ParameterizedTest (name = "{index} пол льва {0} ответ метода doesHaveMane = {1}" )
     @MethodSource("sexForLion")
     public void testDoesHaveMane(String sex, boolean expect) throws Exception {
-        Lion lion = new Lion(sex);
+        Lion lion = new Lion(sex, new Feline());
         boolean result = lion.doesHaveMane();
         assertEquals(result, expect);
     }

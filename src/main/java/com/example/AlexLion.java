@@ -4,15 +4,16 @@ import java.util.List;
 
 public class AlexLion extends Lion{
     boolean hasMane;
-    private final Feline feline = new Feline();
+    Feline feline;
 
-    public AlexLion() throws Exception {
-        super("Самец");
+    public AlexLion(Feline feline) throws Exception {
+        super("Самец",
+                feline);
     }
 
     @Override
     public int getKittens() {
-        return feline.getKittens(0);
+        return 0;
     }
 
     public List<String> getFriends() {

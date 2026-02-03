@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(MockitoExtension.class)
 class CatTest {
 
-    @Spy
+    @Mock
     static Feline feline;
 
     @Test
@@ -31,6 +31,7 @@ class CatTest {
     @Test
     public void getFood() throws Exception {
         Cat cat = new Cat(feline);
+        Mockito.when(cat.getFood()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> result = cat.getFood();
         assertEquals(List.of("Животные", "Птицы", "Рыба"), result);
     }

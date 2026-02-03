@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class LionTest {
 
     @Spy
-    Lion lion = new Lion("Самец");
+    Lion lion = new Lion("Самец", new Feline());
 
     LionTest() throws Exception {
     }
@@ -42,6 +42,6 @@ class LionTest {
 
     @Test
     public void testLionThrowExeption(){
-        assertThrows(Exception.class, () -> new Lion("текст"));
+        assertThrows(Exception.class, () -> new Lion("текст", new Feline()));
     }
 }
